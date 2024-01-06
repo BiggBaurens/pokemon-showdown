@@ -22038,4 +22038,141 @@ export const Moves: {[moveid: string]: MoveData} = {
         type: "Ghost",
         contestType: "Beautiful",
 	},
+	wirewhip: { //works
+        num: 10003,
+        accuracy: 100,
+        basePower: 80,
+        category: "Physical",
+        name: "Wire Whip",
+        pp: 10,
+        priority: 0,
+        flags: {contact: 1, protect: 1, mirror: 1},
+        secondary: {
+            chance: 20,
+            status: 'brn',
+        },
+        target: "normal",
+        type: "Electric",
+        contestType: "Cool",
+    },
+    duststorm: { //works (didnt check perf acc)
+        num: 10004,
+        accuracy: 80,
+        basePower: 100,
+        category: "Special",
+        name: "Dust Storm",
+        pp: 10,
+        priority: 0,
+        flags: {protect: 1, mirror: 1, wind: 1},
+        onModifyMove(move, pokemon, target) {
+            if (target && ['sandstorm'].includes(target.effectiveWeather())) {
+                move.accuracy = true;
+            }
+        },
+        secondary: {
+            chance: 25,
+            boosts: {
+                accuracy: -1,
+            },
+        },
+        target: "allAdjacentFoes",
+        type: "Rock",
+    },
+    creepycrawlyrush: { //function works
+        num: 10005,
+        accuracy: 100,
+        basePower: 40,
+        category: "Physical",
+        name: "Creepy-Crawly Rush",
+        pp: 30,
+        priority: 1,
+        flags: {contact: 1, protect: 1, mirror: 1},
+        secondary: null,
+        onBasePower(basePower, pokemon) {
+            if (this.randomChance(3, 10)) {
+                this.add('-activate', pokemon, 'move: Creepy-Crawly Rush');
+                return this.chainModify(1.5);
+            }
+        },
+        target: "normal",
+        type: "Bug",
+        contestType: "Cool",
+    },
+    choked: { //function works
+        num: 10006,
+        accuracy: true,
+        basePower: 0,
+        category: "Status",
+        name: "Choked",
+        pp: 30,
+        priority: 0,
+        flags: {snatch: 1},
+        onTry(source) {
+            if (source.hp <= source.maxhp / 8 || source.maxhp === 1) return false;
+        },
+        onTryHit(pokemon, target, move) {
+            if (!this.boost(move.boosts as SparseBoostsTable)) return null;
+            delete move.boosts;
+        },
+        onHit(pokemon) {
+            this.directDamage(pokemon.maxhp / 8);
+        },
+        boosts: {
+            def: 2,
+            spd: 2,
+        },
+        secondary: null,
+        target: "self",
+        type: "Normal", 
+    },
+    gravflux: {
+        num: 10007,
+        accuracy: 100,
+        basePower: 70,
+        category: "Special",
+        name: "Gravitic Flux",
+        pp: 10,
+        priority: 0,
+        flags: {protect: 1, mirror: 1},
+        self: {
+            pseudoWeather: 'gravity',
+        },
+        secondary: null,
+        target: "normal",
+        type: "Psychic",
+        contestType: "Clever",
+    },
+    deathzone: {
+        num: 10008,
+        accuracy: 100,
+        basePower: 75,
+        category: "Special",
+        isNonstandard: "Past",
+        name: "Death Zone",
+        pp: 10,
+        priority: 0,
+        flags: {protect: 1, mirror: 1, nonsky: 1},
+        onHit(target, source, move) {
+            if (source.isActive) target.addVolatile('trapped', source, move, 'trapper');
+        },
+        secondary: null,
+        target: "allAdjacentFoes",
+        type: "Dark",
+        contestType: "Tough",
+    },
+    fireballscrew: { //works but doesnt break protect
+        num: 10009,
+        accuracy: 100,
+        basePower: 95,
+        category: "Physical",
+        name: "Fireball Screw",
+        pp: 5,
+        priority: 0,
+        flags: {contact: 1, protect: 1, mirror: 1},
+        breaksProtect: true,
+        secondary: null,
+        target: "normal",
+        type: "Fire",
+        contestType: "Tough",
+    },
 };
