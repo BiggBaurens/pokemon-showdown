@@ -22023,7 +22023,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Electric",
 		contestType: "Cool",
 	},
-soulstrike: {
+	oulstrike: {
         num: 10002,
         accuracy: 100,
         basePower: 80,
