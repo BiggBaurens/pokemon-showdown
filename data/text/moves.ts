@@ -7543,10 +7543,58 @@ export const MovesText: {[k: string]: MoveText} = {
 			shortDesc: "Nearly always goes first. Always crits.",
 		},
 	},
+	soulstrike: {
+		name: "Soul Strike",
+		desc: "Deals damage to the target based on its Special Defense instead of Defense.",
+		shortDesc: "Damages target based on Sp. Def, not Def.",
+	},
+	wirewhip: {
+		name: "Wire Whip",
+		desc: "Has a 10% chance to burn the target.",
+		shortDesc: "10% chance to burn the target.",
+	},
+	duststorm: {
+		name: "Dust Storm",
+		desc: "Has a 25% chance to Lowers the target's accuracy by 1 stage. If the weather is Sandstorm, this move does not check accuracy. If this move is used against a Pokemon holding Utility Umbrella, this move's accuracy remains at 80%.",
+		shortDesc: "25% chance to Lower accuracy by 1 stage. Can't miss in sandstorm.",
+	},
+	creepycrawlyrush: {
+		name: "Creepy-Crawly Rush",
+		desc: "Has a 30% chance to do 1.5x Damage.",
+		shortDesc: "Usually goes first. Has a 30% chance to do 1.5x Dmg",
+
+		activate: "  [POKEMON] is going full creepy mode.",
+	},
+	choked: {
+		name: "Choked",
+		desc: "Raises the user's Defense and Special Defense by 2 stages in exchange for the user losing 1/6 of its maximum HP, rounded down. Fails if the user would faint or if its Attack, Special Attack, and Speed stat stages would not change.",
+		shortDesc: "+2 Def and Sp. Def for 1/6 user's max HP.",
+	},
+	graviticflux: {
+		name: "Gravitic Flux",
+		desc: "If this move is successful, the effect of Gravity begins.",
+		shortDesc: "Starts Gravity.",
+	},
+	deathzone: {
+		name: "Death Zone",
+		desc: "Prevents the target from switching out. The target can still switch out if it is holding Shed Shell or uses Baton Pass, Flip Turn, Parting Shot, Teleport, U-turn, or Volt Switch. If the target leaves the field using Baton Pass, the replacement will remain trapped. The effect ends if the user leaves the field.",
+		shortDesc: "Hits adjacent foes. Prevents them from switching.",
+	},
+	fireballscrew: {
+		name: "Fireball Screw",
+		desc: "If this move is successful, it breaks through the target's Baneful Bunker, Detect, King's Shield, Protect, or Spiky Shield for this turn, allowing other Pokemon to attack the target normally. If the target's side is protected by Crafty Shield, Mat Block, Quick Guard, or Wide Guard, that protection is also broken for this turn and other Pokemon may attack the target's side normally.",
+		shortDesc: "breaks protect.",
+
+		activate: "#shadowforce",
+	},
 	secretblade: {
 		name: "Secret Blade",
 		desc: "Deals damage to the target based on its Defense instead of Special Defense.",
 		shortDesc: "Damages target based on Defense, not Sp. Def.",
 	},
-	
+	doublelauncher: {
+		name: "Double Launcher",
+		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
+		shortDesc: "Hits twice.",
+	},
 };
