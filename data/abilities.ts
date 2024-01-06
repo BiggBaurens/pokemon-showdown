@@ -5632,7 +5632,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				return;
 			}
 			if (source.species.id === 'keldeo' && source.hp && !source.transformed && source.side.foePokemonLeft()) {
-				this.add('-activate', source, 'ability: Resolute');
+				this.add('-activate', source, 'ability: Sword of Justice');
 				source.formeChange('Keldeo-Resolute', this.effect, true);
 			}
 		},
