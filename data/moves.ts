@@ -22147,7 +22147,6 @@ export const Moves: {[moveid: string]: MoveData} = {
         accuracy: 100,
         basePower: 75,
         category: "Special",
-        isNonstandard: "Past",
         name: "Death Zone",
         pp: 10,
         priority: 0,
