@@ -11402,7 +11402,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		types: ["Water", "Fighting"],
 		gender: "N",
 		baseStats: {hp: 91, atk: 82, def: 90, spa: 139, spd: 90, spe: 118},
-		abilities: {0: "Sword of Justice"},
+		abilities: {0: "Sharpness"},
 		heightm: 1.4,
 		weightkg: 48.5,
 		color: "Yellow",
