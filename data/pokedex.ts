@@ -11385,7 +11385,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		types: ["Water", "Fighting"],
 		gender: "N",
 		baseStats: {hp: 91, atk: 72, def: 90, spa: 129, spd: 90, spe: 108},
-		abilities: {0: "Justified"},
+		abilities: {0: "Resolute"},
 		heightm: 1.4,
 		weightkg: 48.5,
 		color: "Yellow",
@@ -11408,7 +11408,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		color: "Yellow",
 		eggGroups: ["Undiscovered"],
 		changesFrom: "Keldeo",
-		battleOnly: "Keldeo-Resolute",
+		battleOnly: "Keldeo",
 	},
 	meloetta: {
 		num: 648,
