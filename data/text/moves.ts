@@ -7556,12 +7556,12 @@ export const MovesText: {[k: string]: MoveText} = {
 	duststorm: {
 		name: "Dust Storm",
 		desc: "Has a 25% chance to Lowers the target's accuracy by 1 stage. If the weather is Sandstorm, this move does not check accuracy. If this move is used against a Pokemon holding Utility Umbrella, this move's accuracy remains at 80%.",
-		shortDesc: "25% chance to Lower accuracy by 1 stage. Can't miss in sandstorm.",
+		shortDesc: "25% to Lower accuracy by 1 stage. Can't miss in sandstorm.",
 	},
 	creepycrawlyrush: {
 		name: "Creepy-Crawly Rush",
 		desc: "Has a 30% chance to do 1.5x Damage.",
-		shortDesc: "Usually goes first. Has a 30% chance to do 1.5x Dmg",
+		shortDesc: "Usually goes first. 30% chance to do 1.5x Dmg",
 
 		activate: "  [POKEMON] is going full creepy mode.",
 	},
@@ -7594,7 +7594,7 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	doublelauncher: {
 		name: "Double Launcher",
-		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
-		shortDesc: "Hits twice.",
+		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit. Both hits have a 10% chance of confusing",
+		shortDesc: "Hits twice. 10% chance to confuse each hit",
 	},
 };
