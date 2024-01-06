@@ -22167,7 +22167,7 @@ export const Moves: {[moveid: string]: MoveData} = {
         name: "Fireball Screw",
         pp: 5,
         priority: 0,
-        flags: {mirror: 1},
+		flags: {mirror: 1, defrost: 1, bullet: 1},
         breaksProtect: true,
         secondary: null,
         target: "normal",
