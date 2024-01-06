@@ -22048,7 +22048,7 @@ export const Moves: {[moveid: string]: MoveData} = {
         priority: 0,
         flags: {contact: 1, protect: 1, mirror: 1},
         secondary: {
-            chance: 20,
+            chance: 10,
             status: 'brn',
         },
         target: "normal",
@@ -22108,14 +22108,14 @@ export const Moves: {[moveid: string]: MoveData} = {
         priority: 0,
         flags: {snatch: 1},
         onTry(source) {
-            if (source.hp <= source.maxhp / 8 || source.maxhp === 1) return false;
+            if (source.hp <= source.maxhp / 6 || source.maxhp === 1) return false;
         },
         onTryHit(pokemon, target, move) {
             if (!this.boost(move.boosts as SparseBoostsTable)) return null;
             delete move.boosts;
         },
         onHit(pokemon) {
-            this.directDamage(pokemon.maxhp / 8);
+            this.directDamage(pokemon.maxhp / 6);
         },
         boosts: {
             def: 2,
@@ -22159,7 +22159,7 @@ export const Moves: {[moveid: string]: MoveData} = {
         type: "Dark",
         contestType: "Tough",
     },
-    fireballscrew: { //works but doesnt break protect
+    fireballscrew: { //works
         num: 10009,
         accuracy: 100,
         basePower: 95,
@@ -22167,7 +22167,7 @@ export const Moves: {[moveid: string]: MoveData} = {
         name: "Fireball Screw",
         pp: 5,
         priority: 0,
-        flags: {contact: 1, protect: 1, mirror: 1},
+        flags: {mirror: 1},
         breaksProtect: true,
         secondary: null,
         target: "normal",
