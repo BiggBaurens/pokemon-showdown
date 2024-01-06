@@ -11393,7 +11393,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		otherFormes: ["Keldeo-Pre-Resolute", "Keldeo-Resolute"],
 		formeOrder: ["Keldeo","Keldeo-Pre-Resolute", "Keldeo-Resolute"],
 	},
-	keldeo2: {
+	keldeopre: {
 		num: 647,
 		name: "Keldeo-Pre-Resolute",
 		baseSpecies: "Keldeo",
