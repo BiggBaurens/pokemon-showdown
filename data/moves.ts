@@ -22189,7 +22189,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Fighting",
 		contestType: "Beautiful",
 	},
-	doublelancher: {
+	doublelauncher: {
 		num: 751,
 		accuracy: 100,
 		basePower: 35,
