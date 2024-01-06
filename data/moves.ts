@@ -22199,7 +22199,10 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {protect: 1, pulse: 1, mirror: 1, distance: 1, noparentalbond: 1},
 		multihit: 2,
-		secondary: null,
+		secondary: {
+			chance: 10,
+			volatileStatus: 'confusion',
+		},
 		target: "normal",
 		type: "Water",
 		maxMove: {basePower: 130},
