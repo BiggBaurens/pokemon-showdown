@@ -11381,7 +11381,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	keldeo: {
 		num: 647,
 		name: "Keldeo",
-		baseForme: "Ordinary",
 		types: ["Water", "Fighting"],
 		gender: "N",
 		baseStats: {hp: 91, atk: 72, def: 90, spa: 129, spd: 90, spe: 108},
