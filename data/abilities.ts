@@ -5626,4 +5626,26 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		rating: 3,
 		num: -4,
 	},
+	resolute: {
+		//inherit: true,
+		onSourceAfterFaint(length, target, source, effect) {
+			if (effect?.effectType !== 'Move') {
+				return;
+			}
+			if (source.species.id === 'keldeo' && source.hp && !source.transformed && source.side.foePokemonLeft()) {
+				this.add('-activate', source, 'ability: Resolute');
+				source.formeChange('Keldeo-Resolute', this.effect, true);
+			}
+		},
+		onModifyMovePriority: -1,
+		onModifyMove(move, attacker) {
+			if (move.id === 'secretsword' && attacker.species.name === 'Greninja-Ash' &&
+				!attacker.transformed) {
+				move.basePower = 100;
+			}
+		},
+		isNonstandard: null,
+		rating: 4,
+		name: "Resolute"
+	},
 };

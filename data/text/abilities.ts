@@ -2262,4 +2262,13 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 
 		activate: "  [POKEMON] extends [MOVE] by 2 turns!",
 	},
+	// Custom abilities
+	resolute: {
+		name: "Resolute",
+		desc: "If this Pokemon is a Keldeo, it transforms into Keldeo-Resolute if it attacks and knocks out another Pokemon. If this Pokemon is an Keldeo-Resolute, its Secret Sword has 100 power.",
+		shortDesc: "After KOing a Pokemon: becomes Keldeo-Resolute, Secret Sword has 100 BP",
+		
+		activate: "  [POKEMON] became is fully pumped!",
+		transform: "[POKEMON] became Keldeo-Resolute!",
+	},
 };
