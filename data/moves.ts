@@ -22125,7 +22125,7 @@ export const Moves: {[moveid: string]: MoveData} = {
         target: "self",
         type: "Normal", 
     },
-    gravflux: {
+    graviticflux: {
         num: 10007,
         accuracy: 100,
         basePower: 70,
