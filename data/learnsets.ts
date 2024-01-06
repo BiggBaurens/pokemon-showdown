@@ -683,6 +683,7 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 			willowisp: ["9M", "8M", "8V", "7M", "6M", "5M", "4M"],
 			wingattack: ["8V", "7L1", "7V", "6L36", "5L36", "4L36", "3L36", "3S0"],
 			workup: ["8M", "7M"],
+			draconicflare: ["9M", "8M", "7M", "7V", "6M", "5M", "4M", "3T"],
 		},
 		eventData: [
 			{generation: 3, level: 70, moves: ["wingattack", "slash", "dragonrage", "firespin"], pokeball: "pokeball"},
