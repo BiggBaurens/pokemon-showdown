@@ -5626,7 +5626,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		rating: 3,
 		num: -4,
 	},
-	resolute: {
+	swordofjustice: {
 		onSourceAfterFaint(length, target, source, effect) {
 			if (effect?.effectType !== 'Move') {
 				return;
@@ -5645,6 +5645,6 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		},
 		isNonstandard: null,
 		rating: 4,
-		name: "Resolute"
+		name: "Sword of Justice"
 	},
 };
