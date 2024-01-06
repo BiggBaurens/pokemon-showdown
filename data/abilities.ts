@@ -5627,7 +5627,6 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: -4,
 	},
 	resolute: {
-		//inherit: true,
 		onSourceAfterFaint(length, target, source, effect) {
 			if (effect?.effectType !== 'Move') {
 				return;
@@ -5639,7 +5638,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		},
 		onModifyMovePriority: -1,
 		onModifyMove(move, attacker) {
-			if (move.id === 'secretsword' && attacker.species.name === 'Greninja-Ash' &&
+			if (move.id === 'secretsword' && attacker.species.name === 'Keldeo-Resolute' &&
 				!attacker.transformed) {
 				move.basePower = 100;
 			}
