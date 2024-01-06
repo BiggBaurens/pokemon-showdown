@@ -1,4 +1,4 @@
-// List of flags and their descriptions can be found in sim/dex-moves.ts
+  // List of flags and their descriptions can be found in sim/dex-moves.ts
 
 export const Moves: {[moveid: string]: MoveData} = {
 	"10000000voltthunderbolt": {
@@ -22022,5 +22022,20 @@ export const Moves: {[moveid: string]: MoveData} = {
 		target: "normal",
 		type: "Electric",
 		contestType: "Cool",
+	},
+soulstrike: {
+        num: 10002,
+        accuracy: 100,
+        basePower: 80,
+        category: "Physical",
+        overrideDefensiveStat: 'spd',
+        name: "Soul Strike",
+        pp: 10,
+        priority: 0,
+        flags: {protect: 1, mirror: 1},
+        secondary: null,
+        target: "normal",
+        type: "Ghost",
+        contestType: "Beautiful",
 	},
 };
