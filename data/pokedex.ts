@@ -11392,7 +11392,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		tags: ["Mythical"],
 		otherFormes: ["Keldeo-Resolute"],
 		formeOrder: ["Keldeo", "Keldeo-Resolute"],
-		battleOnly: "Keldeo-Resolute",
 	},
 	keldeoresolute: {
 		num: 647,
