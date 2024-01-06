@@ -11407,7 +11407,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		weightkg: 48.5,
 		color: "Yellow",
 		eggGroups: ["Undiscovered"],
-		changesFrom: "Keldeo",
 		battleOnly: "Keldeo",
 	},
 	meloetta: {
