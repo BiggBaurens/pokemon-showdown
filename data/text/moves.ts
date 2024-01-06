@@ -7597,4 +7597,14 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit. Both hits have a 10% chance of confusing",
 		shortDesc: "Hits twice. 10% chance to confuse each hit",
 	},
+	draconicflare: {
+		name: "Draconic Flare",
+		desc: "Has a 10% chance to burn the target. This move's type effectiveness against Dragon is changed to be super effective no matter what this move's type is.",
+		shortDesc: "10% chance to brn. Super effective on Dragon.",
+	},
+	pollenbomb: {
+		name: "Pollen Bomb",
+		desc: "This move summons Leech Seed on the foe.",
+		shortDesc: "Summons Leech Seed.",
+	},
 };

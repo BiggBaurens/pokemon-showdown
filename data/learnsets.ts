@@ -315,6 +315,7 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 			weatherball: ["9M", "8M"],
 			workup: ["8M", "7M"],
 			worryseed: ["9L44", "8L44", "7T", "7L39", "6T", "6L39", "5T", "5L39", "4T", "4L39"],
+			pollenbomb: ["9M", "8M", "8V", "7M", "7V", "6M", "5M", "4M", "3T"],
 		},
 		eventData: [
 			{generation: 6, level: 100, isHidden: true, moves: ["solarbeam", "frenzyplant", "synthesis", "grasspledge"], pokeball: "cherishball"},

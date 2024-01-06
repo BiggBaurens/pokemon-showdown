@@ -22189,11 +22189,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Fighting",
 		contestType: "Beautiful",
 	},
-	doublelauncher: {
-		num: 751,
+	doublelauncher: {//Blastoise's new signature move
+		num: 10011,
 		accuracy: 100,
 		basePower: 35,
-		category: "Physical",
+		category: "Special",
 		name: "Double Launcher",
 		pp: 10,
 		priority: 0,
@@ -22206,5 +22206,43 @@ export const Moves: {[moveid: string]: MoveData} = {
 		target: "normal",
 		type: "Water",
 		maxMove: {basePower: 130},
+	},
+	draconicflare: {//Charizards new signature move
+		num: 10012,
+		accuracy: 100,
+		basePower: 80,
+		category: "Special",
+		name: "Draconic Flare",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, defrost: 1},
+		onEffectiveness(typeMod, target, type) {
+			if (type === 'Dragon') return 1;
+		},
+		secondary: {
+			chance: 10,
+			status: 'brn',
+		},
+		target: "normal",
+		type: "Fire",
+		contestType: "Beautiful",
+	},
+	pollenbomb: {//Venusaur's new signature move
+		num: 10013,
+		accuracy: 90,
+		basePower: 60,
+		category: "Special",
+		name: "Pollen Bomb",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, reflectable: 1, mirror: 1},
+		onHit(target, source) {
+			if (target.hasType('Grass')) return null;
+			target.addVolatile('leechseed', source);
+		},
+		secondary: null,
+		target: "normal",
+		type: "Grass",
+		contestType: "Clever",
 	},
 };
