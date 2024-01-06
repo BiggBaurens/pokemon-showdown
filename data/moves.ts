@@ -16488,13 +16488,13 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Normal",
 		contestType: "Clever",
 	},
-	secretsword: {
+	secretblade: {
 		num: 548,
 		accuracy: 100,
 		basePower: 85,
 		category: "Special",
 		overrideDefensiveStat: 'def',
-		name: "Secret Sword",
+		name: "Secret Blade",
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, slicing: 1},

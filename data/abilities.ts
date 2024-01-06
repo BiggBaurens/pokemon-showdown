@@ -5636,13 +5636,6 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				source.formeChange('Keldeo-Resolute', this.effect, true); //checks if mon is keldeo and not transformed. will now transform upon a faint 
 			} 
 		},
-		onModifyMovePriority: -1,
-		onModifyMove(move, attacker) {
-			if (move.id === 'secretsword' && attacker.species.name === 'Keldeo-Resolute' &&
-				!attacker.transformed) {
-				move.basePower = 100;
-			}
-		},
 		rating: 4,
 		name: "Sword of Justice"
 	},

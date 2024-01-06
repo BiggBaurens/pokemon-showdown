@@ -67226,7 +67226,7 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 			safeguard: ["8M", "7M", "6M", "5M"],
 			scald: ["8M", "7M", "6M", "5M"],
 			secretpower: ["6M"],
-			secretsword: ["9L1", "8L1", "8S4", "7T", "6T", "5T"],
+			secretblade: ["9L1", "8L1", "8S4", "7T", "6T", "5T"],
 			sleeptalk: ["9M", "8M", "7M", "6M", "5T"],
 			smartstrike: ["9M", "8M"],
 			snore: ["8M", "7T", "6T", "5T"],

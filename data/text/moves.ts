@@ -5550,8 +5550,8 @@ export const MovesText: {[k: string]: MoveText} = {
 			shortDesc: "Effect varies with terrain. (30% paralysis chance)",
 		},
 	},
-	secretsword: {
-		name: "Secret Sword",
+	secretblade: {
+		name: "Secret Blade",
 		desc: "Deals damage to the target based on its Defense instead of Special Defense.",
 		shortDesc: "Damages target based on Defense, not Sp. Def.",
 	},
