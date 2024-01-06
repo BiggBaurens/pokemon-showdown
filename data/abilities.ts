@@ -5629,12 +5629,12 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	swordofjustice: {
 		onSourceAfterFaint(length, target, source, effect) {
 			if (effect?.effectType !== 'Move') {
-				return;
+				return; //makes it so transform fails when not fainted by status move
 			}
-			if (source.species.id === 'keldeo' && source.hp && !source.transformed && source.side.foePokemonLeft()) {
+			if (source.species.id === 'keldeo' && source.hp && !source.transformed && source.side.foePokemonLeft()) { 
 				this.add('-activate', source, 'ability: Sword of Justice');
-				source.formeChange('Keldeo-Resolute', this.effect, true);
-			}
+				source.formeChange('Keldeo-Resolute', this.effect, true); //checks if mon is keldeo and not transformed. will now transform upon a faint 
+			} 
 		},
 		onModifyMovePriority: -1,
 		onModifyMove(move, attacker) {
@@ -5643,7 +5643,6 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				move.basePower = 100;
 			}
 		},
-		isNonstandard: null,
 		rating: 4,
 		name: "Sword of Justice"
 	},
