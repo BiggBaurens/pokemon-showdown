@@ -22193,7 +22193,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 	doublelauncher: {//Blastoise's new signature move
 		num: 10011,
 		accuracy: 100,
-		basePower: 35,
+		basePower: 40,
 		category: "Special",
 		name: "Double Launcher",
 		pp: 10,
