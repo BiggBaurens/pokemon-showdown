@@ -22255,14 +22255,10 @@ export const Moves: {[moveid: string]: MoveData} = {
         pp: 10,
         priority: 0,
         flags: {protect: 1, mirror: 1, defrost: 1},
-        onHit(target, source, move) {
+        onTryHit(target, source, move) {
 			//source.addVolatile('dualstrike');
 			if (source.volatiles['dualstrikefirst']) {
 				move.type = 'Water';
-				const slow = this.random(10); 
-				if (slow <= 3) {
-					this.boost({spe: -1}, target);
-				}
 
 				delete source.volatiles['dualstrikefirst'];
 				source.addVolatile('dualstrikesecond');
@@ -22270,11 +22266,24 @@ export const Moves: {[moveid: string]: MoveData} = {
 			else {
 				source.addVolatile('dualstrikefirst');
 				move.type = 'Fire';
+			}
+        },
+		onHit(target, source, move) {
+			if (move.type === 'Fire'){
 				if (this.randomChance(1, 10)){
 					return target.trySetStatus('brn', source);
 				}
 			}
-        },
+			else if (move.type === 'Water') {
+				const slow = this.random(10); 
+				if (slow <= 3) {
+					this.boost({spe: -1}, target);
+				}
+			}
+			else {
+				return null;
+			}
+		},
         multihit: 2,
         secondary: null,
         target: "normal",
