@@ -22266,7 +22266,6 @@ export const Moves: {[moveid: string]: MoveData} = {
 
 				delete source.volatiles['dualstrikefirst'];
 				source.addVolatile('dualstrikesecond');
-				console.log("onTryHit with volatileStatus type: "+move.type);
 			}
 			else {
 				source.addVolatile('dualstrikefirst');
@@ -22274,7 +22273,6 @@ export const Moves: {[moveid: string]: MoveData} = {
 				if (this.randomChance(1, 10)){
 					return target.trySetStatus('brn', source);
 				}
-				console.log("onTryHit without volatileStatus type: "+move.type);
 			}
         },
         multihit: 2,
