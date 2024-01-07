@@ -22259,9 +22259,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 			//source.addVolatile('dualstrike');
 			if (source.volatiles['dualstrikefirst']) {
 				if (source.getTypes().length === 1) {
-					move.type = source.getTypes()[0];
+					move.type = "Fire";
 				} else {
-					move.type = source.getTypes()[1];
+					move.type = "Water";
 				}
 				delete source.volatiles['dualstrikefirst'];
 				source.addVolatile('dualstrikesecond');
@@ -22269,7 +22269,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			}
 			else {
 				source.addVolatile('dualstrikefirst');
-				move.type = source.getTypes()[0];
+				move.type = "fire";
 				console.log("onTryHit without volatileStatus type: "+move.type);
 			}
         },
