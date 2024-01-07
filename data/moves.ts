@@ -22246,4 +22246,54 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Grass",
 		contestType: "Clever",
 	},
+	pyropump: {//Volcanions new signature move
+		num: 10014,
+		accuracy: 95,
+		basePower: 100,
+		category: "Special",
+		name: "Pyro Pump",
+		pp: 10,
+		flags: {protect: 1, mirror: 1, defrost: 1},
+		onEffectiveness(typeMod, target, type, move) {
+			return typeMod + this.dex.getEffectiveness('Water', type);
+		},
+		priority: 0,
+		secondaries: [
+			{
+				chance: 30,
+				boosts: {
+					spe: -1,
+				},
+			}, 
+			{
+				chance: 10,
+				status: 'brn',
+			},
+		],
+		target: "normal",
+		type: "Fire",
+		zMove: {basePower: 170},
+		contestType: "Tough",
+	},
+	holyblade: {
+		num: 10015,
+		accuracy: 95,
+		basePower: 85,
+		category: "Physical",
+		name: "Holy Blade",
+		pp: 10,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, slicing: 1},
+		secondary: {
+			chance: 20,
+			self: {
+				boosts: {
+					atk: 1,
+				},
+			},
+		},
+		target: "normal",
+		type: "Fairy",
+		contestType: "Cool",
+	},
 };

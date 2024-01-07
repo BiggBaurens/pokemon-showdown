@@ -23415,6 +23415,7 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 			graviticflux: ["9M", "8M", "7T", "6T", "5T", "4T"],
 			deathzone: ["9M", "8M", "7T", "6T", "5T", "4T"],
 			fireballscrew: ["9M", "8M", "7T", "6T", "5T", "4T"],
+			holyblade: ["9M", "8M", "7T", "6T", "5T", "4T"],
 		},
 		eventData: [
 			{generation: 3, level: 30, shiny: 1, moves: ["pound", "transform", "megapunch", "metronome"]},
@@ -73841,6 +73842,7 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 			weatherball: ["9M", "9L12", "8M", "8L12", "7L40", "6L40"],
 			wildcharge: ["9M"],
 			willowisp: ["9M", "8M", "7M", "6M"],
+			pyropump: ["9L1", "8L72", "8S2", "7L1", "6L1", "6S0", "6S1"],
 		},
 		eventData: [
 			{generation: 6, level: 70, moves: ["steameruption", "overheat", "hydropump", "mist"], pokeball: "cherishball"},

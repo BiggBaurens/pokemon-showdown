@@ -7607,4 +7607,14 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "This move summons Leech Seed on the foe.",
 		shortDesc: "Summons Leech Seed.",
 	},
+	pyropump: {
+		name: "Pyro Pump",
+		desc: "This move combines Water in its type effectiveness against the target. This move has a 10% chance to burn and 30% chance to drop the opponents speed.",
+		shortDesc: "Combines Water in its type effectiveness. 10% chance burn. 30% chance slow",
+	},
+	holyblade: {
+		name: "Holy Blade",
+		desc: "Has a 20% chance to raise the user's Attack by 1 stage.",
+		shortDesc: "20% chance to raise the user's Attack by 1.",
+	},
 };
