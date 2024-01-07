@@ -22271,9 +22271,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 			else {
 				source.addVolatile('dualstrikefirst');
 				move.type = 'Fire';
-				const burn = this.random(10); 
-				if (burn <= 1) {
-					source.trySetStatus('brn', target);
+				if (this.randomChance(1, 10)){
+					return target.trySetStatus('brn', source);
 				}
 				console.log("onTryHit without volatileStatus type: "+move.type);
 			}
