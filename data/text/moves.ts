@@ -7609,8 +7609,8 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	pyropump: {
 		name: "Pyro Pump",
-		desc: "This move combines Water in its type effectiveness against the target. This move has a 10% chance to burn and 30% chance to drop the opponents speed.",
-		shortDesc: "Combines Water in its type effectiveness. 10% chance burn. 30% chance slow",
+		desc: "This move hits twice once with Fire and once with Water.",
+		shortDesc: "Hits twice. 1x Fire. 1x Water",
 	},
 	holyblade: {
 		name: "Holy Blade",

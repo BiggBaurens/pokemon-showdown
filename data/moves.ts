@@ -22246,35 +22246,40 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Grass",
 		contestType: "Clever",
 	},
-	pyropump: {//Volcanions new signature move
-		num: 10014,
-		accuracy: 95,
-		basePower: 100,
-		category: "Special",
-		name: "Pyro Pump",
-		pp: 10,
-		flags: {protect: 1, mirror: 1, defrost: 1},
-		onEffectiveness(typeMod, target, type, move) {
-			return typeMod + this.dex.getEffectiveness('Water', type);
-		},
-		priority: 0,
-		secondaries: [
-			{
-				chance: 30,
-				boosts: {
-					spe: -1,
-				},
-			}, 
-			{
-				chance: 10,
-				status: 'brn',
-			},
-		],
-		target: "normal",
-		type: "Fire",
-		zMove: {basePower: 170},
-		contestType: "Tough",
-	},
+	pyropump: {
+        num: 10014,
+        accuracy: 100,
+        basePower: 50,
+        category: "Special",
+        name: "Pyro Pump",
+        pp: 10,
+        priority: 0,
+        flags: {protect: 1, mirror: 1, defrost: 1},
+        onTryHit(target, source, move) {
+			//source.addVolatile('dualstrike');
+			if (source.volatiles['dualstrikefirst']) {
+				if (source.getTypes().length === 1) {
+					move.type = source.getTypes()[0];
+				} else {
+					move.type = source.getTypes()[1];
+				}
+				delete source.volatiles['dualstrikefirst'];
+				source.addVolatile('dualstrikesecond');
+				console.log("onTryHit with volatileStatus type: "+move.type);
+			}
+			else {
+				source.addVolatile('dualstrikefirst');
+				move.type = source.getTypes()[0];
+				console.log("onTryHit without volatileStatus type: "+move.type);
+			}
+        },
+        multihit: 2,
+        secondary: null,
+        target: "normal",
+        type: "Fire",
+        maxMove: {basePower: 130},
+        contestType: "Tough",
+    },
 	holyblade: {
 		num: 10015,
 		accuracy: 95,
