@@ -3533,6 +3533,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		name: "Defog",
 		pp: 15,
 		priority: 0,
+		ignoreAbility: true,
 		flags: {protect: 1, reflectable: 1, mirror: 1, bypasssub: 1},
 		onHit(target, source, move) {
 			let success = false;
