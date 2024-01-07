@@ -7620,6 +7620,6 @@ export const MovesText: {[k: string]: MoveText} = {
 	mysticarrows: {
 		name: "Mystic Arrows",
 		desc: "Hits 2-5 times in one turn. This move becomes a physical attack if the user's Attack is greater than its Special Attack, including stat stage changes.",
-		shortDesc: "Hits 2-5 times in one turn. Physical if user's Atk > Sp. Atk. Ignores Abilities.",
+		shortDesc: "Hits 2-5 times. Physical if user's Atk > Sp. Atk. Ignores Abilities.",
 	},
 };
