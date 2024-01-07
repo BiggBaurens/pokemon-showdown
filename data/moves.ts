@@ -22255,7 +22255,7 @@ export const Moves: {[moveid: string]: MoveData} = {
         pp: 10,
         priority: 0,
         flags: {protect: 1, mirror: 1, defrost: 1},
-        onTryHit(target, source, move) {
+        onHit(target, source, move) {
 			//source.addVolatile('dualstrike');
 			if (source.volatiles['dualstrikefirst']) {
 				move.type = 'Water';
