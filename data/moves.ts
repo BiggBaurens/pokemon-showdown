@@ -22352,7 +22352,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			},
 		},
 		target: "normal",
-		type: "Rock",
+		type: "Ice",
 		contestType: "Beautiful",
 	},
 };
