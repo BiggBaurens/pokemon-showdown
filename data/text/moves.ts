@@ -7622,4 +7622,9 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "Hits 2-5 times in one turn. This move becomes a physical attack if the user's Attack is greater than its Special Attack, including stat stage changes.",
 		shortDesc: "Hits 2-5 times. Physical if user's Atk > Sp. Atk. Ignores Abilities.",
 	},
+	eternalblizzard: {
+		name: "Eternal Blizzard",
+		desc: "Has a 20% chance to start Snow. Gets 20% stronger if Snow is active ",
+		shortDesc: "20% chance to start Snow. 20% stronger in Snow",
+	},
 };

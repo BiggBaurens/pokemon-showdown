@@ -22332,4 +22332,27 @@ export const Moves: {[moveid: string]: MoveData} = {
 		maxMove: {basePower: 130},
 		contestType: "Cute",
 	},
+	eternalblizzard: {
+		num: 10017,
+		accuracy: 90,
+		basePower: 90,
+		category: "Special",
+		name: "Eternal Blizzard",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, bullet: 1,},
+		onModifyMove(move) {
+			if (this.field.isWeather(['hail', 'snow'])) 
+			return this.chainModify(2);
+		},
+		secondary: {
+			chance: 20,
+			onHit(target, source) {
+				this.field.setWeather('snow');
+			},
+		},
+		target: "normal",
+		type: "Rock",
+		contestType: "Beautiful",
+	},
 };
