@@ -7617,4 +7617,9 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "Has a 20% chance to raise the user's Attack by 1 stage.",
 		shortDesc: "20% chance to raise the user's Attack by 1.",
 	},
+	mysticarrows: {
+		name: "Mystic Arrows",
+		desc: "Hits 2-5 times in one turn. This move becomes a physical attack if the user's Attack is greater than its Special Attack, including stat stage changes.",
+		shortDesc: "Hits 2-5 times in one turn. Physical if user's Atk > Sp. Atk. Ignores Abilities.",
+	},
 };

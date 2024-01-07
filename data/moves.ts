@@ -22312,4 +22312,24 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Fairy",
 		contestType: "Cool",
 	},
+	mysticarrows: {
+		num: 10016,
+		accuracy: 100,
+		basePower: 25,
+		category: "Special",
+		name: "Mystic Arrows",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		onModifyMove(move, pokemon) {
+			if (pokemon.getStat('atk', false, true) > pokemon.getStat('spa', false, true)) move.category = 'Physical';
+		},
+		multihit: [2, 5],
+		secondary: null,
+		target: "normal",
+		type: "Fairy",
+		zMove: {basePower: 140},
+		maxMove: {basePower: 130},
+		contestType: "Cute",
+	},
 };
