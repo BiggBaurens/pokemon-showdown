@@ -22266,7 +22266,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			}
 			else {
 				source.addVolatile('dualstrikefirst');
-				move.type = 'fire';
+				move.type = 'Fire';
 				console.log("onTryHit without volatileStatus type: "+move.type);
 			}
         },
