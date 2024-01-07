@@ -691,6 +691,11 @@ export const Conditions: {[k: string]: ConditionData} = {
 			}
 			return 5;
 		},
+		onWeatherModifyDamage(damage, attacker, defender, move) {
+			if (move.id === 'eternalblizzard') {
+				return this.chainModify(2);
+			}
+		},
 		onModifyDefPriority: 10,
 		onModifyDef(def, pokemon) {
 			if (pokemon.hasType('Ice') && this.field.isWeather('snow')) {

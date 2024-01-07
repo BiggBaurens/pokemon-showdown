@@ -22341,10 +22341,6 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 15,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, bullet: 1,},
-		onModifyMove(move) {
-			if (this.field.isWeather(['hail', 'snow'])) 
-			return this.chainModify(2);
-		},
 		secondary: {
 			chance: 20,
 			onHit(target, source) {
