@@ -22351,4 +22351,73 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Ice",
 		contestType: "Beautiful",
 	},
+	weatherforce: {
+		num: 10018,
+		accuracy: 100,
+		basePower: 60,
+		category: "Special",
+		name: "Weather Force",
+		pp: 10,
+		priority: 0,
+		flags: {bullet: 1, protect: 1, mirror: 1},
+		onModifyType(move, pokemon) {
+			switch (pokemon.effectiveWeather()) {
+			case 'sunnyday':
+			case 'desolateland':
+				move.type = 'Fire';
+				break;
+			case 'raindance':
+			case 'primordialsea':
+				move.type = 'Water';
+				break;
+			case 'sandstorm':
+				move.type = 'Rock';
+				break;
+			case 'hail':
+			case 'snow':
+				move.type = 'Ice';
+				break;
+			}
+		},
+		onModifyMove(move, pokemon) {
+			switch (pokemon.effectiveWeather()) {
+			case 'sunnyday':
+			case 'desolateland':
+				move.basePower *= 2;
+				break;
+			case 'raindance':
+			case 'primordialsea':
+				move.basePower *= 2;
+				break;
+			case 'sandstorm':
+				move.basePower *= 2;
+				break;
+			case 'hail':
+			case 'snow':
+				move.basePower *= 2;
+				break;
+			}
+			this.debug('BP: ' + move.basePower);
+		},
+		secondary: {
+			chance: 100,
+			onHit(target, source) {
+				const result = this.random(4);
+				if (result === 0 && !this.field.isWeather(['hail', 'snow', 'sunnyday', 'raindance', 'sandstorm'] )) {
+					this.field.setWeather('sunnyday')
+				} else if (result === 1 && !this.field.isWeather(['hail', 'snow', 'sunnyday', 'raindance', 'sandstorm'] )) {
+					this.field.setWeather('raindance')
+				} else if (result === 2 && !this.field.isWeather(['hail', 'snow', 'sunnyday', 'raindance', 'sandstorm'] )) {
+					this.field.setWeather('sandstorm')
+				} else if (result === 3 && !this.field.isWeather(['hail', 'snow', 'sunnyday', 'raindance', 'sandstorm'] )){
+					this.field.setWeather('snow')
+				}
+			},
+		},
+		target: "normal",
+		type: "Normal",
+		zMove: {basePower: 160},
+		maxMove: {basePower: 130},
+		contestType: "Beautiful",
+	},
 };

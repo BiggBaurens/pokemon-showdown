@@ -43176,6 +43176,12 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 			waterpulse: ["7T", "6T", "5D", "4M", "3M"],
 			weatherball: ["7L25", "6L25", "5L40", "4L30", "3L30"],
 			workup: ["7M", "5M"],
+			//new moves 
+			weatherforce: ["9T", "7T", "6T", "5D", "4M", "3M"],
+			meteorbeam: ["9M", "8T"],
+			electroshot: ["9M"],
+			powergem: ["9M", "9L37"],
+			rapidspin: ["9L9", "8L9", "7L19", "7V", "6L19", "5L19", "4L19", "3L23"],
 		},
 	},
 	kecleon: {
