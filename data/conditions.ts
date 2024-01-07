@@ -693,7 +693,7 @@ export const Conditions: {[k: string]: ConditionData} = {
 		},
 		onWeatherModifyDamage(damage, attacker, defender, move) {
 			if (move.id === 'eternalblizzard') {
-				return this.chainModify(2);
+				return this.chainModify(1.2);
 			}
 		},
 		onModifyDefPriority: 10,
