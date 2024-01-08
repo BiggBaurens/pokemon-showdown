@@ -7632,4 +7632,9 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "100% Chance to set up either Rain, Sand, Sun, Snow. Doesnt overwrite weather thats active. Power doubles if a weather condition other than Delta Stream is active, and this move's type changes to match. Ice type during Snow, Water type during Primordial Sea or Rain Dance, Rock type during Sandstorm, and Fire type during Desolate Land or Sunny Day. If the user is holding Utility Umbrella and uses Weather Ball during Primordial Sea, Rain Dance, Desolate Land, or Sunny Day, this move remains Normal type and does not double in power.",
 		shortDesc: "Sets Random weather Power doubles. type varies weather.",
 	},
+	wombocombo: {
+		name: "Wombo Combo",
+		desc: "Damage of moves used on consecutive turns is increased. Max 2x after 5 turns.",
+		shortDesc: "Max 2x after 5 consecutive uses.",
+	},
 };

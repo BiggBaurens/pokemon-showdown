@@ -23572,6 +23572,7 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 			xscissor: ["9M", "8M", "8V", "7M", "6M", "5M", "4M"],
 			zapcannon: ["7V", "3S12", "3S13"],
 			zenheadbutt: ["9M", "8M", "7T", "6T", "5T", "4T"],
+			//Custom moves
 			soulstrike: ["9M", "8M", "7T", "6T", "5T", "4T"],
 			wirewhip: ["9M", "8M", "7T", "6T", "5T", "4T"],
 			duststorm: ["9M", "8M", "7T", "6T", "5T", "4T"],
@@ -23583,6 +23584,7 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 			holyblade: ["9M", "8M", "7T", "6T", "5T", "4T"],
 			mysticarrows: ["9M", "8M", "7T", "6T", "5T", "4T"],
 			eternalblizzard: ["9M", "8M", "7T", "6T", "5T", "4T"],
+			wombocombo: ["9M", "8M", "7T", "6T", "5T", "4T"],
 		},
 		eventData: [
 			{generation: 3, level: 30, shiny: 1, moves: ["pound", "transform", "megapunch", "metronome"]},
