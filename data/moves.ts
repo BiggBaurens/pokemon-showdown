@@ -22406,23 +22406,19 @@ export const Moves: {[moveid: string]: MoveData} = {
 		basePower: 80,
 		basePowerCallback(pokemon, target, move) {
 			let consecutive: number = 0;
-
+		
 			if (pokemon.moveLastTurnResult === true) {
-				consecutive = Math.min(consecutive + 1, 5);
-  			console.log('Event happened! Updated value:', consecutive);
-			}
-			else {
-  			consecutive = 0;
-  			console.log('Event did not happen. Value back to 0:', consecutive);
-		}	
-			
-			if (pokemon.moveLastTurnResult === true) {
-				console.log(consecutive);
-				return Math.min(160, 64 + 16 * consecutive);
-			}
-			
-			else {
+				consecutive = Math.min(consecutive + 1, 5); 
+				console.log('Event happened! Updated value:', consecutive);
+			} else {
 				consecutive = 0;
+				console.log('Event did not happen. Value back to 0:', consecutive);
+			}
+		
+			if (consecutive > 0) {
+				console.log('Current consecutive hits:', consecutive);
+				return Math.min(160, 80 + 16 * consecutive);
+			} else {
 				return move.basePower;
 			}
 		},
