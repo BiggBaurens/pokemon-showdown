@@ -286,6 +286,8 @@ export class Pokemon {
 		originalSpecies?: string, // Mix and Mega
 		[key: string]: any,
 	};
+	
+	consecutiveHits!: number;
 
 	constructor(set: string | AnyObject, side: Side) {
 		this.side = side;
