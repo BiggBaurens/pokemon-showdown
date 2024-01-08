@@ -22405,27 +22405,23 @@ export const Moves: {[moveid: string]: MoveData} = {
 		accuracy: 90,
 		basePower: 80,
 		basePowerCallback(pokemon, target, move) {
+			this.effectState.numConsecutive = '';
+
 			if (pokemon.moveLastTurnResult === true) {
-					return Math.min(160, 80 + 16 * this.effectState.numConsecutive);
+				this.effectState.numConsecutive++;
+				return Math.min(160, 80 + 16 * this.effectState.numConsecutive);
 			}
-			return move.basePower;
+			
+			else {
+				this.effectState.numConsecutive = 0;
+				return move.basePower;
+			}
 		},
 		category: "Physical",
 		name: "Wombo Combo",
 		pp: 15,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, punch: 1},
-		condition: {
-			onStart(pokemon) {
-				this.effectState.numConsecutive = 0;
-				if (pokemon.moveLastTurnResult === true) {
-					this.effectState.numConsecutive++;
-				}
-				else {
-					this.effectState.numConsecutive = 0;
-				}
-			},
-		},
 		secondary: null,
 		target: "normal",
 		type: "Fighting",
