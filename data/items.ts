@@ -7629,7 +7629,7 @@ export const Items: {[itemid: string]: ItemData} = {
 	},
 	pikachain: {
 		name: "Pika's Chain",
-		spritenum: 758,
+		spritenum: 747,
 		fling: {
 			basePower: 60,
 		},
@@ -7650,7 +7650,7 @@ export const Items: {[itemid: string]: ItemData} = {
 	},
 	eeveechain: {
 		name: "Eevee's Chain",
-		spritenum: 758,
+		spritenum: 747,
 		fling: {
 			basePower: 60,
 		},
