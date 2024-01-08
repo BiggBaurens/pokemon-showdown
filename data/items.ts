@@ -7322,7 +7322,6 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 0,
 		gen: 2,
-		isNonstandard: "Past",
 	},
 	berry: {
 		name: "Berry",
