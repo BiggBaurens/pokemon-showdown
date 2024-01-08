@@ -22408,13 +22408,13 @@ export const Moves: {[moveid: string]: MoveData} = {
 			let consecutive: number = 0;
 
 			if (pokemon.moveLastTurnResult === true) {
-  			consecutive += 1;
+				consecutive = Math.min(consecutive + 1, 5);
   			console.log('Event happened! Updated value:', consecutive);
-			} 
+			}
 			else {
   			consecutive = 0;
   			console.log('Event did not happen. Value back to 0:', consecutive);
-			}	
+		}	
 			
 			if (pokemon.moveLastTurnResult === true) {
 				console.log(consecutive);
