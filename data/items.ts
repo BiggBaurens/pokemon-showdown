@@ -7628,7 +7628,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		isNonstandard: "CAP",
 	},
 	pikachain: {
-		name: "Pika's Chain",
+		name: "Pikas Chain",
 		spritenum: 747,
 		fling: {
 			basePower: 60,
@@ -7645,11 +7645,11 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		forcedForme: "Pikachu-Starter",
 		itemUser: ["Pikachu-Starter"],
-		num: 2406,
+		num: 10001,
 		gen: 9,
 	},
 	eeveechain: {
-		name: "Eevee's Chain",
+		name: "Eevees Chain",
 		spritenum: 747,
 		fling: {
 			basePower: 60,
@@ -7666,7 +7666,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		forcedForme: "Eevee-Starter",
 		itemUser: ["Eevee-Starter"],
-		num: 2406,
+		num: 10002,
 		gen: 9,
 	},
 };

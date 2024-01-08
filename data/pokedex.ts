@@ -760,7 +760,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		weightkg: 6,
 		color: "Yellow",
 		eggGroups: ["Undiscovered"],
-		requiredItem: "Pika's Chain",
+		requiredItem: "Pikas Chain",
 		changesFrom: "Pikachu",
 	},
 	pikachugmax: {
@@ -2946,7 +2946,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		weightkg: 6.5,
 		color: "Brown",
 		eggGroups: ["Undiscovered"],
-		requiredItem: "Eevee's Chain",
+		requiredItem: "Eevees Chain",
 		changesFrom: "Eevee",
 	},
 	eeveegmax: {
