@@ -22404,14 +22404,15 @@ export const Moves: {[moveid: string]: MoveData} = {
 		num: 223,
 		accuracy: 90,
 		basePower: 80,	
-		onTryHit(pokemon) {
-			if (pokemon.moveLastTurnResult === true) {
+		onTryHit(pokemon, move) {
+			if (pokemon.moveLastTurnResult === true && this.lastMove) {
 				consecutive = Math.min(consecutive + 1, 5); 
 				console.log('Event happened! Updated value:', consecutive);
 				return consecutive;
-			} else if(this.effectState.lastMove !== Moves.id) {
+			} else {
 				consecutive = 0;
 				console.log('Event did not happen. Value back to 0:', consecutive);
+				return consecutive;
 			}
 		},	
 		basePowerCallback(pokemon, target, move) {		
