@@ -7627,4 +7627,46 @@ export const Items: {[itemid: string]: ItemData} = {
 		gen: 8,
 		isNonstandard: "CAP",
 	},
+	pikachain: {
+		name: "Pika's Chain",
+		spritenum: 758,
+		fling: {
+			basePower: 60,
+		},
+		onBasePowerPriority: 15,
+		onBasePower(basePower, user, target, move) {
+			if (user.baseSpecies.name.startsWith('Pikachu-Starter')) {
+				return this.chainModify([4915, 4096]);
+			}
+		},
+		onTakeItem(item, source) {
+			if (source.baseSpecies.baseSpecies === 'Pikachu') return false;
+			return true;
+		},
+		forcedForme: "Pikachu-Starter",
+		itemUser: ["Pikachu-Starter"],
+		num: 2406,
+		gen: 9,
+	},
+	eeveechain: {
+		name: "Eevee's Chain",
+		spritenum: 758,
+		fling: {
+			basePower: 60,
+		},
+		onBasePowerPriority: 15,
+		onBasePower(basePower, user, target, move) {
+			if (user.baseSpecies.name.startsWith('Eevee-Starter')) {
+				return this.chainModify([4915, 4096]);
+			}
+		},
+		onTakeItem(item, source) {
+			if (source.baseSpecies.baseSpecies === 'Eevee') return false;
+			return true;
+		},
+		forcedForme: "Eevee-Starter",
+		itemUser: ["Eevee-Starter"],
+		num: 2406,
+		gen: 9,
+	},
 };

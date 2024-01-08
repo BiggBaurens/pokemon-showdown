@@ -2425,4 +2425,12 @@ export const ItemsText: {[k: string]: ItemText} = {
 		name: "Vile Vial",
 		desc: "If held by a Venomicon, its Poison- and Flying-type attacks have 1.2x power.",
 	},
+	pikachuchain: {
+		name: "Pika's Chain",
+		desc: "Pikachu-Partner: 1.2x power attacks.",
+	},
+	eeveechain: {
+		name: "Eevee's Chain",
+		desc: "Eevee-Partner: 1.2x power attacks",
+	},
 };
