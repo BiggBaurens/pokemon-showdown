@@ -22405,15 +22405,15 @@ export const Moves: {[moveid: string]: MoveData} = {
 		accuracy: 90,
 		basePower: 80,
 		basePowerCallback(pokemon, target, move) {
-			this.effectState.numConsecutive = '';
+			let consecutive = 0;
 
 			if (pokemon.moveLastTurnResult === true) {
-				this.effectState.numConsecutive++;
-				return Math.min(160, 80 + 16 * this.effectState.numConsecutive);
+				consecutive++;
+				return Math.min(160, 64 + 16 * consecutive);
 			}
 			
 			else {
-				this.effectState.numConsecutive = 0;
+				consecutive = 0;
 				return move.basePower;
 			}
 		},
