@@ -22408,7 +22408,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			let consecutive = 0;
 
 			if (pokemon.moveLastTurnResult === true) {
-				consecutive++;
+				consecutive += 1;
 				console.log(consecutive);
 				return Math.min(160, 64 + 16 * consecutive);
 			}
