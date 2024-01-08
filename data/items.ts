@@ -7626,7 +7626,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		gen: 8,
 		isNonstandard: "CAP",
 	},
-	pikachain: {
+	pikaschain: {
 		name: "Pikas Chain",
 		spritenum: 747,
 		fling: {
@@ -7647,7 +7647,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		num: 10001,
 		gen: 9,
 	},
-	eeveechain: {
+	eeveeschain: {
 		name: "Eevees Chain",
 		spritenum: 747,
 		fling: {
