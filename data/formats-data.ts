@@ -239,8 +239,9 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		natDexTier: "RU",
 	},
 	pikachustarter: {
-		isNonstandard: "LGPE",
-		tier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
+		natDexTier: "OU",
 	},
 	pikachugmax: {
 		isNonstandard: "Past",
@@ -1049,8 +1050,9 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	eeveestarter: {
-		isNonstandard: "LGPE",
-		tier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
+		natDexTier: "OU",
 	},
 	eeveegmax: {
 		isNonstandard: "Past",
