@@ -22401,29 +22401,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 		contestType: "Beautiful",
 	},
 	wombocombo: {
-		num: 223,
+		num: 10019,
 		accuracy: 90,
-		basePower: 80,	
-		onTryHit(source, pokemon) {
-			const checkmove = ['wombocombo'];
-			if (pokemon.moveLastTurnResult === true && source.getMoveData('wombocombo')) {
-				consecutive = Math.min(consecutive + 1, 5); 
-				console.log('Event happened! Updated value:', consecutive);
-				return consecutive;
-			} 
-			else {
-				consecutive = 0;
-				console.log('Event did not happen. Value back to 0:', consecutive);
-				return consecutive;
-			}
-		},	
-		basePowerCallback(pokemon, target, move) {		
-			if (consecutive > 0) {
-				console.log('Current consecutive hits:', consecutive);
-				return Math.min(160, 80 + 16 * consecutive);
-			} else {
-				return move.basePower;
-			}
+		basePower: 20,	
+		basePowerCallback(pokemon, target, move) {
+			return 20 * move.hit;
 		},
 		category: "Physical",
 		name: "Wombo Combo",
@@ -22431,6 +22413,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, punch: 1},
 		secondary: null,
+		multiaccuracy: true,
 		target: "normal",
 		type: "Fighting",
 		contestType: "Cool",
