@@ -22405,22 +22405,27 @@ export const Moves: {[moveid: string]: MoveData} = {
 		accuracy: 90,
 		basePower: 80,
 		basePowerCallback(pokemon, target, move) {
-			let consecutive: number = pokemon.moveLastTurnResult === true ? pokemon.consecutiveHits + 1 : 0;
-		  
-			if (consecutive > 0) {
-			  console.log(`Event happened! Updated value: ${consecutive}`);
-			} else {
-			  console.log(`Event did not happen. Value back to 0: ${consecutive}`);
+			let consecutive: number = 0;
+
+			if (pokemon.moveLastTurnResult === true) {
+  			consecutive += 1;
+  			console.log('Event happened! Updated value:', consecutive);
+			} 
+			else {
+  			consecutive = 0;
+  			console.log('Event did not happen. Value back to 0:', consecutive);
+			}	
+			
+			if (pokemon.moveLastTurnResult === true) {
+				console.log(consecutive);
+				return Math.min(160, 64 + 16 * consecutive);
 			}
-		  
-			if (consecutive > 0) {
-			  console.log(`Current consecutive hits: ${consecutive}`);
-			  return Math.min(160, 64 + 16 * consecutive);
-			} else {
-			  console.log('No consecutive hits. Returning base power.');
-			  return move.basePower;
+			
+			else {
+				consecutive = 0;
+				return move.basePower;
 			}
-		  },
+		},
 		category: "Physical",
 		name: "Wombo Combo",
 		pp: 15,
