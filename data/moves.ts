@@ -1,5 +1,7 @@
   // List of flags and their descriptions can be found in sim/dex-moves.ts
 
+  let consecutive: number = 0;
+
 export const Moves: {[moveid: string]: MoveData} = {
 	"10000000voltthunderbolt": {
 		num: 719,
@@ -22404,9 +22406,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		num: 223,
 		accuracy: 90,
 		basePower: 80,
-		basePowerCallback(pokemon, target, move) {
-			let consecutive: number = 0;
-		
+		basePowerCallback(pokemon, target, move) {		
 			if (pokemon.moveLastTurnResult === true) {
 				consecutive = Math.min(consecutive + 1, 5); 
 				console.log('Event happened! Updated value:', consecutive);
