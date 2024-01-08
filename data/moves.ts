@@ -22409,7 +22409,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 				consecutive = Math.min(consecutive + 1, 5); 
 				console.log('Event happened! Updated value:', consecutive);
 				return consecutive;
-			} else {
+			} else if(this.effectState.lastMove !== Moves.id) {
 				consecutive = 0;
 				console.log('Event did not happen. Value back to 0:', consecutive);
 			}
