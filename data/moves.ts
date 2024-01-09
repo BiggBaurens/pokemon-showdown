@@ -22413,6 +22413,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, punch: 1},
 		secondary: null,
+		multihit: 3,
 		multiaccuracy: true,
 		target: "normal",
 		type: "Fighting",
