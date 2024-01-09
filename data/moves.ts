@@ -22403,28 +22403,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 	wombocombo: {
 		num: 10019,
 		accuracy: 90,
-		basePower: 80,	
-		onTryHit(pokemon, attacker, move) {
-			let lastMove = attacker.lastMoveUsed?.id;
-			
-			if (attacker.moveLastTurnResult === true && lastMove === 'wombocombo' ) {
-				consecutive = Math.min(consecutive + 1, 6); 
-				console.log('Event happened! Updated value:', consecutive);
-				return consecutive;
-			} 
-			else {
-				consecutive = 1;
-				console.log('Event did not happen. Value back to 0:', consecutive);
-				return consecutive;
-			}
-		},
-		basePowerCallback(pokemon, target, move) {		
-			if (consecutive > 1) {
-				console.log('Current consecutive hits:', consecutive);
-				return Math.min(160, 80 + 16 * consecutive);
-			} else {
-				return move.basePower;
-			}
+		basePower: 20,	
+		basePowerCallback(pokemon, target, move) {
+			return 20 * move.hit;
 		},
 		category: "Physical",
 		name: "Wombo Combo",
@@ -22432,8 +22413,105 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, punch: 1},
 		secondary: null,
+		multiaccuracy: true,
 		target: "normal",
 		type: "Fighting",
+		contestType: "Cool",	
+	}, 
+	powernap: {
+		num: 10020,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Power Nap",
+		pp: 10,
+		priority: 0,
+		flags: {heal: 1, bypasssub: 1, allyanim: 1, cantusetwice: 1},
+		onHit(pokemon) {
+			const success = !!this.heal(this.modify(pokemon.maxhp, 0.50));
+			return pokemon.cureStatus() || success;
+		},
+		secondary: null,
+		target: "allies",
+		type: "Grass",
+	},
+	starlightbarrier: {
+		num: 10021,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Starlight Barrier",
+		pp: 10,
+		priority: 4,
+		flags: {noassist: 1, failcopycat: 1},
+		stallingMove: true,
+		volatileStatus: 'starlightbarrier',
+		onPrepareHit(pokemon) {
+			return !!this.queue.willAct() && this.runEvent('StallMove', pokemon);
+		},
+		onHit(pokemon) {
+			pokemon.addVolatile('stall');
+		},
+		condition: {
+			duration: 1,
+			onStart(target) {
+				this.add('-singleturn', target, 'move: Protect');
+			},
+			onTryHitPriority: 3,
+			onTryHit(target, source, move) {
+				if (!move.flags['protect']) {
+					if (['gmaxoneblow', 'gmaxrapidflow'].includes(move.id)) return;
+					if (move.isZ || move.isMax) target.getMoveHitData(move).zBrokeProtect = true;
+					return;
+				}
+				if (move.smartTarget) {
+					move.smartTarget = false;
+				} else {
+					this.add('-activate', target, 'move: Protect');
+				}
+				const lockedmove = source.getVolatile('lockedmove');
+				if (lockedmove) {
+					// Outrage counter is reset
+					if (source.volatiles['lockedmove'].duration === 2) {
+						delete source.volatiles['lockedmove'];
+					}
+				}
+				if (move.isZOrMaxPowered && move.category === 'Special') {
+					this.heal(source.baseMaxhp / 4,);
+				}
+				return this.NOT_FAIL;
+			},
+			onHit(pokemon, source, move) {
+				if (move.isZOrMaxPowered && move.category === 'Special') {
+					this.heal(source.baseMaxhp / 4,);
+				}
+			},
+		},
+		secondary: null,
+		target: "self",
+		type: "Fairy",
+		contestType: "Tough",
+	},
+	tyrantrage: {
+		num: 10022,
+		accuracy: 100,
+		basePower: 120,
+		category: "Physical",
+		name: "Tyrant Rage",
+		pp: 10,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, failinstruct: 1},
+		self: {
+			volatileStatus: 'lockedmove',
+		},
+		onAfterMove(pokemon) {
+			if (pokemon.volatiles['lockedmove'] && pokemon.volatiles['lockedmove'].duration === 1) {
+				pokemon.removeVolatile('lockedmove');
+			}
+		},
+		secondary: null,
+		target: "randomNormal",
+		type: "Rock",
 		contestType: "Cool",
 	},
 };
