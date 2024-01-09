@@ -22432,7 +22432,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			return pokemon.cureStatus() || success;
 		},
 		secondary: null,
-		target: "allies",
+		target: "self",
 		type: "Grass",
 	},
 	starlightbarrier: {
