@@ -23585,6 +23585,9 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 			mysticarrows: ["9M", "8M", "7T", "6T", "5T", "4T"],
 			eternalblizzard: ["9M", "8M", "7T", "6T", "5T", "4T"],
 			wombocombo: ["9M", "8M", "7T", "6T", "5T", "4T"],
+			powernap: ["9M", "8M", "7T", "6T", "5T", "4T"],
+			starlightbarrier: ["9M", "8M", "7T", "6T", "5T", "4T"],
+			tyrantrage: ["9M", "8M", "7T", "6T", "5T", "4T"],
 		},
 		eventData: [
 			{generation: 3, level: 30, shiny: 1, moves: ["pound", "transform", "megapunch", "metronome"]},

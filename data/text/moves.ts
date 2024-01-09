@@ -7637,4 +7637,19 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "Damage of moves used on consecutive turns is increased. Max 2x after 5 turns.",
 		shortDesc: "Max 2x after 5 consecutive uses.",
 	},
+	powernap: {
+		name: "Power Nap",
+		desc: "The user restores 1/2 of its maximum HP, rounded half up.",
+		shortDesc: "Heal 50%. status condition cured. cant use twice in a row",
+	}, 
+	starlightbarrier: {
+		name: "Starlight Barrier",
+		desc: "The user is protected from most attacks made by other Pokemon during this turn, and Pokemon using special move agaisnt the user. user gains 1/4 of their maximum HP, rounded up. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Burning Bulwark, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Silk Trap, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn.",
+		shortDesc: "Protects from moves. Special: User gains 1/4 max HP.",
+	},
+	tyrantrage: {
+		name: "Tyrant Rage",
+		desc: "The user spends two or three turns locked into this move and becomes confused immediately after its move on the last turn of the effect if it is not already. This move targets an opposing Pokemon at random on each turn. If the user is prevented from moving, is asleep at the beginning of a turn, or the attack is not successful against the target on the first turn of the effect or the second turn of a three-turn effect, the effect ends without causing confusion. If this move is called by Sleep Talk and the user is asleep, the move is used for one turn and does not confuse the user.",
+		shortDesc: "Lasts 2-3 turns. Confuses the user afterwards.",
+	},
 };
