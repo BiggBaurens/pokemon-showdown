@@ -22405,9 +22405,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 		accuracy: 90,
 		basePower: 80,	
 		onTryHit(pokemon, attacker, move) {
-			let lastMove = attacker.lastMoveUsed?.id;
-
-			if (attacker.moveLastTurnResult === true && lastMove === move.id ) {
+			let lastMove = attacker.lastMoveUsed?.name;
+			
+			if (attacker.moveLastTurnResult === true && lastMove === 'wombocombo' ) {
 				consecutive = Math.min(consecutive + 1, 6); 
 				console.log('Event happened! Updated value:', consecutive);
 				return consecutive;
@@ -22417,7 +22417,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 				console.log('Event did not happen. Value back to 0:', consecutive);
 				return consecutive;
 			}
-		},	
+		},
 		basePowerCallback(pokemon, target, move) {		
 			if (consecutive > 1) {
 				console.log('Current consecutive hits:', consecutive);
