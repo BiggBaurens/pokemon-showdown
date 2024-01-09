@@ -22405,14 +22405,19 @@ export const Moves: {[moveid: string]: MoveData} = {
 		accuracy: 90,
 		basePower: 80,	
 		onTryHit(pokemon, attacker, move) {
-			if (move.id == 'wombocombo') {
-				consecutive = Math.min(consecutive + 1, 6); 
-				console.log('Event happened! Updated value:', consecutive);
-				return consecutive;
-			} 
-			else {
+			if (pokemon.moveLastTurnResult === false ) {
 				consecutive = 1;
 				console.log('Event did not happen. Value back to 0:', consecutive);
+				return consecutive;
+			} 
+			else if (move.id !== 'wombocombo'){
+				consecutive = 1;
+				console.log('Event did not happen. Value back to 0:', consecutive);
+				return consecutive;
+			}
+			else {
+				consecutive = Math.min(consecutive + 1, 6); 
+				console.log('Event happened! Updated value:', consecutive);
 				return consecutive;
 			}
 		},	
