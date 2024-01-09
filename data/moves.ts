@@ -22407,7 +22407,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		onTryHit(pokemon, attacker, move) {
 			let lastMove = attacker.lastMoveUsed?.id;
 
-			if (pokemon.moveLastTurnResult === true && lastMove === move.id ) {
+			if (attacker.moveLastTurnResult === true && lastMove === move.id ) {
 				consecutive = Math.min(consecutive + 1, 6); 
 				console.log('Event happened! Updated value:', consecutive);
 				return consecutive;
