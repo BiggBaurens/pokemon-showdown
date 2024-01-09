@@ -22477,14 +22477,16 @@ export const Moves: {[moveid: string]: MoveData} = {
 						delete source.volatiles['lockedmove'];
 					}
 				}
-				if (move.isZOrMaxPowered && move.category === 'Special') {
-					this.heal(source.baseMaxhp / 4,);
+				if (move.isZOrMaxPowered && this.getCategory(move) === 'Special') {
+					this.heal(source.baseMaxhp / 4, source, source);
+					console.log('Event onTryHit happened!')
 				}
 				return this.NOT_FAIL;
 			},
 			onHit(pokemon, source, move) {
-				if (move.isZOrMaxPowered && move.category === 'Special') {
-					this.heal(source.baseMaxhp / 4,);
+				if (move.isZOrMaxPowered && this.getCategory(move) === 'Special') {
+					this.heal(source.baseMaxhp / 4, source, source);
+					console.log('Event OnHit happened!')
 				}
 			},
 		},
