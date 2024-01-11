@@ -22478,13 +22478,13 @@ export const Moves: {[moveid: string]: MoveData} = {
 					}
 				}
 				if (this.checkMoveMakesContact(move, source, target)) {
-					this.heal(target.baseMaxhp / 4, source, source);
+					this.heal(source.baseMaxhp / 4, source, source);
 				}
 				return this.NOT_FAIL;
 			},
 			onHit(target, source, move) {
 				if (this.checkMoveMakesContact(move, source, target)) {
-					this.heal(target.baseMaxhp / 4, source, source);
+					this.heal(source.baseMaxhp / 4, source, source);
 				}
 			},
 		},
