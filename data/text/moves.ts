@@ -7670,7 +7670,7 @@ export const MovesText: {[k: string]: MoveText} = {
 	deepjungle: {
 		name: "Deep Jungle",
 		desc: "Sets the field effect Deep Jungle. Effect: Slows enemy pokemon by 50% for 5 turns.",
-		shortDesc: "Field effect: Deep Jungle. (Enemies 50% slow 5 turns)",
+		shortDesc: "Field effect: Deep Jungle. (Enemies 25% slow 4 turns)",
 	},
 	techtonicrush: {
 		name: "Techtonic Rush",
