@@ -22477,7 +22477,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 						delete source.volatiles['lockedmove'];
 					}
 				}
-				if (this.checkMoveMakesContact(move, source, target)) {
+				if (move.isZOrMaxPowered && this.checkMoveMakesContact(move, source, target)) {
 					this.heal(target.baseMaxhp / 4, source, source);
 				}
 				return this.NOT_FAIL;
