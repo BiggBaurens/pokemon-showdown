@@ -22487,6 +22487,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 					this.heal(target.baseMaxhp / 4, source, source);
 				}
 			},
+		},
 		secondary: null,
 		target: "self",
 		type: "Fairy",
