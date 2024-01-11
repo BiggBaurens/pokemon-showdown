@@ -22478,7 +22478,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 					}
 				}
 				if (this.checkMoveMakesContact(move, source, target)) {
-					this.damage(source.baseMaxhp / 8, source, target);
+					this.heal(target.baseMaxhp / 4, source, source);
 				}
 				return this.NOT_FAIL;
 			},
