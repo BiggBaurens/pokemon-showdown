@@ -22650,7 +22650,6 @@ export const Moves: {[moveid: string]: MoveData} = {
 		flags: {charge: 1, mirror: 1, nosleeptalk: 1, noassist: 1, failinstruct: 1, slicing: 1},
 		onPrepareHit(target, source) {
 			this.add('-anim', source, 'Night Slash', target);
-			this.add('-prepareAnim', source, 'Shadow Force', target);
 		}, 
 		onTryMove(attacker, defender, move) {
 			this.attrLastMove('[still]');
