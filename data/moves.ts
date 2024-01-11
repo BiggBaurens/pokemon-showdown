@@ -22517,7 +22517,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 	},
 	midnightslash: {
 		num: 10023,
-		accuracy: 95,
+		accuracy: 100,
 		basePower: 30,
 		category: "Physical",
 		name: "Midnight Slash",
