@@ -22014,6 +22014,12 @@ export const Moves: {[moveid: string]: MoveData} = {
         pp: 10,
         priority: 0,
         flags: {protect: 1, mirror: 1},
+		onTryMove() {
+			this.attrLastMove('[still]'); 
+		},
+		onPrepareHit(target, source) {
+			this.add('-anim', source, 'neverendingnightmare', source);
+		}, 
         secondary: null,
         target: "normal",
         type: "Ghost",
