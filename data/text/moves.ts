@@ -7672,4 +7672,9 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "Sets the field effect Deep Jungle. Effect: Slows enemy pokemon by 50% for 5 turns.",
 		shortDesc: "Field effect: Deep Jungle. (Enemies 50% slow 5 turns)",
 	},
+	techtonicrush: {
+		name: "Techtonic Rush",
+		desc: "If this move is faisl, it sets up a hazard on the opposing side of the field, damaging each opposing Pokemon that switches in. Foes lose 1/32, 1/16, 1/8, 1/4, or 1/2 of their maximum HP, rounded down, based on their weakness to the Rock type; 0.25x, 0.5x, neutral, 2x, or 4x, respectively. Can be removed from the opposing side if any opposing Pokemon uses Mortal Spin, Rapid Spin, or Defog successfully, or is hit by Defog.",
+		shortDesc: "Move fail: Sets Stealth Rock on the target's side.",
+	},
 };

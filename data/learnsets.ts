@@ -23592,6 +23592,7 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 			blackhole: ["9M", "8M", "7T", "6T", "5T", "4T"],
 			northernimpact: ["9M", "8M", "7T", "6T", "5T", "4T"],
 			deepjungle: ["9M", "8M", "7T", "6T", "5T", "4T"],
+			techtonicrush: ["9M", "8M", "7T", "6T", "5T", "4T"],
 		},
 		eventData: [
 			{generation: 3, level: 30, shiny: 1, moves: ["pound", "transform", "megapunch", "metronome"]},

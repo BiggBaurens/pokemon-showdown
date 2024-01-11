@@ -22579,18 +22579,19 @@ export const Moves: {[moveid: string]: MoveData} = {
 		target: "normal",
 		type: "Ice",
 	},
-	deepjungle: {
+	deepjungle: {// doesnt slow down
 		num: 10026,
 		accuracy: 100,
 		basePower: 65,
-		category: "Special",
+		category: "Physical",
 		name: "Deep Jungle",
 		pp: 10,
 		priority: 0,
-		flags: {bullet: 1, protect: 1, mirror: 1},
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
+		sideCondition: 'deepjungle',
 		condition: {
-			duration: 5,
+			duration: 4,
 			onSideStart(targetSide) {
 				this.add('-sidestart', targetSide, 'Deep Jungle');
 			},
@@ -22600,11 +22601,32 @@ export const Moves: {[moveid: string]: MoveData} = {
 				this.add('-sideend', targetSide, 'Deep Jungle');
 			},
 			onModifySpe(spe, pokemon) {
-				return this.chainModify(0.50);
+				return this.chainModify(0.75);
 			},
 		},
 		target: "normal",
 		type: "Grass",
 		contestType: "Beautiful",
+	},
+	techtonicrush: {
+		num: 10027,
+		accuracy: 90,
+		basePower: 95,
+		category: "Physical",
+		name: "Techtonic Rush",
+		pp: 10,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		hasCrashDamage: true,
+		onMoveFail(target, source, move) {
+			if (!move.hasSheerForce && source.hp) {
+				for (const side of source.side.foeSidesWithConditions()) {
+					side.addSideCondition('stealthrock');
+				}
+			}
+		},
+		secondary: {},
+		target: "normal",
+		type: "Ground",
 	},
 };
