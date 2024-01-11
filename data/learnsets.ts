@@ -23588,6 +23588,10 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 			powernap: ["9M", "8M", "7T", "6T", "5T", "4T"],
 			starlightbarrier: ["9M", "8M", "7T", "6T", "5T", "4T"],
 			tyrantrage: ["9M", "8M", "7T", "6T", "5T", "4T"],
+			midnightslash: ["9M", "8M", "7T", "6T", "5T", "4T"],
+			blackhole: ["9M", "8M", "7T", "6T", "5T", "4T"],
+			northernimpact: ["9M", "8M", "7T", "6T", "5T", "4T"],
+			deepjungle: ["9M", "8M", "7T", "6T", "5T", "4T"],
 		},
 		eventData: [
 			{generation: 3, level: 30, shiny: 1, moves: ["pound", "transform", "megapunch", "metronome"]},

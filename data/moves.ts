@@ -22515,4 +22515,96 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Rock",
 		contestType: "Cool",
 	},
+	midnightslash: {
+		num: 10023,
+		accuracy: 95,
+		basePower: 30,
+		category: "Physical",
+		name: "Midnight Slash",
+		pp: 10,
+		priority: 0,
+		flags: {charge: 1, mirror: 1, nosleeptalk: 1, noassist: 1, failinstruct: 1, slicing: 1},
+		onTryMove(attacker, defender, move) {
+			if (attacker.removeVolatile(move.id)) {
+				return;
+			}
+			this.add('-prepare', attacker, move.name);
+			if (!this.runEvent('ChargeMove', attacker, defender, move)) {
+				return;
+			}
+			attacker.addVolatile('twoturnmove', defender);
+			return null;
+		},
+		condition: {
+			duration: 2,
+			onInvulnerability: false,
+		},
+		secondary: null,
+		multihit: [3, 5],
+		critRatio: 2,
+		target: "normal",
+		type: "Dark",
+		contestType: "Cool",
+	},
+	blackhole: {
+		num: 10024,
+		accuracy: 100,
+		basePower: 70,
+		category: "Special",
+		name: "Black Hole",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		volatileStatus: 'partiallytrapped',
+		secondary: null,
+		target: "normal",
+		type: "Psychic",
+		contestType: "Tough",
+	},
+	northernimpact: {
+		num: 10025,
+		accuracy: 100,
+		basePower: 60,
+		category: "Physical",
+		name: "Northern Impact",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (this.field.isWeather(['hail', 'snow'])) {
+				return this.chainModify(2);
+			}
+		},
+		secondary: null,
+		target: "normal",
+		type: "Ice",
+	},
+	deepjungle: {
+		num: 10026,
+		accuracy: 100,
+		basePower: 65,
+		category: "Special",
+		name: "Deep Jungle",
+		pp: 10,
+		priority: 0,
+		flags: {bullet: 1, protect: 1, mirror: 1},
+		secondary: null,
+		condition: {
+			duration: 5,
+			onSideStart(targetSide) {
+				this.add('-sidestart', targetSide, 'Deep Jungle');
+			},
+			onSideResidualOrder: 26,
+			onSideResidualSubOrder: 9,
+			onSideEnd(targetSide) {
+				this.add('-sideend', targetSide, 'Deep Jungle');
+			},
+			onModifySpe(spe, pokemon) {
+				return this.chainModify(0.50);
+			},
+		},
+		target: "normal",
+		type: "Grass",
+		contestType: "Beautiful",
+	},
 };

@@ -7652,4 +7652,24 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "The user spends two or three turns locked into this move and becomes confused immediately after its move on the last turn of the effect if it is not already. This move targets an opposing Pokemon at random on each turn. If the user is prevented from moving, is asleep at the beginning of a turn, or the attack is not successful against the target on the first turn of the effect or the second turn of a three-turn effect, the effect ends without causing confusion. If this move is called by Sleep Talk and the user is asleep, the move is used for one turn and does not confuse the user.",
 		shortDesc: "Lasts 2-3 turns. Confuses the user afterwards.",
 	},
+	midnightslash: {
+		name: "Midnight Slash",
+		desc: "If the user is holding a Power Herb, the move completes in one turn. Hits 3 to 5 times.",
+		shortDesc: "Disappears turn 1. Hits turn 2. hits 3 to 5 times. High crit.",
+	},
+	blackhole: {
+		name: "Black Hole",
+		desc: "Prevents the target from switching for four or five turns (seven turns if the user is holding Grip Claw). Causes damage to the target equal to 1/8 of its maximum HP (1/6 if the user is holding Binding Band), rounded down, at the end of each turn during effect. The target can still switch out if it is holding Shed Shell or uses Baton Pass, Flip Turn, Parting Shot, Shed Tail, Teleport, U-turn, or Volt Switch. The effect ends if either the user or the target leaves the field, or if the target uses Mortal Spin, Rapid Spin, or Substitute successfully. This effect is not stackable or reset by using this or another binding move.",
+		shortDesc: "Traps and damages the target for 4-5 turns.",
+	}, 
+	northernimpact: {
+		name: "Northern Impact",
+		desc: "Power doubles if Snow is active.",
+		shortDesc: "2x power in Snow.",
+	},
+	deepjungle: {
+		name: "Deep Jungle",
+		desc: "Sets the field effect Deep Jungle. Effect: Slows enemy pokemon by 50% for 5 turns.",
+		shortDesc: "Field effect: Deep Jungle. (Enemies 50% slow 5 turns)",
+	},
 };
