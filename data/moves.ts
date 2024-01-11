@@ -22149,7 +22149,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			this.attrLastMove('[still]'); 
 		},
 		onPrepareHit(target, source) {
-			this.add('-anim', source, 'Kinesis', target);
+			this.add('-anim', source, 'Calm Mind', target);
 		}, 
         self: {
             pseudoWeather: 'gravity',
