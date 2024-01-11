@@ -22565,7 +22565,6 @@ export const Moves: {[moveid: string]: MoveData} = {
 		stallingMove: true,
 		volatileStatus: 'starlightbarrier',
 		onPrepareHit(pokemon, target, source) {
-			this.add('-anim', source, 'Protect', source);
 			return !!this.queue.willAct() && this.runEvent('StallMove', pokemon);
 		},
 		onHit(pokemon) {
