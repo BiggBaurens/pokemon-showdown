@@ -22245,6 +22245,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			volatileStatus: 'confusion',
 		},
 		target: "normal",
+		smartTarget: true,
 		type: "Water",
 		maxMove: {basePower: 130},
 	},
